@@ -101,7 +101,7 @@ export default function Chat() {
               value={input}
               onChange={handleInputChange}
             />
-            <Button className="bg-orange-600" type="submit">
+            <Button className="bg-orange-600 hover:bg-orange-800 text-white" type="submit">
               Perguntar
             </Button>
           </form>
