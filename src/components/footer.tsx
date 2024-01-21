@@ -1,5 +1,4 @@
-import React from 'react';
-import { FaInstagram, FaLinkedin, FaYoutube, FaGithub, FaNewspaper } from 'react-icons/fa';
+
 
 const Footer = () => {
   return (
@@ -9,12 +8,12 @@ const Footer = () => {
         <nav className="mt-2">
           <ul className="flex justify-center space-x-4">
             <li>
-              <a href="/portfolio" className="hover:text-teal-500">Meu Portfólio</a>
+              <a href="/portfolio" aria-label="Acessar o meu Portfólio" className="hover:text-teal-500">Meu Portfólio</a>
             </li>
             <li>
-              <a href="/projetos" className="hover:text-teal-500">Outros Projetos</a>
+              <a href="/projetos" aria-label="Acessar os meus projetos" className="hover:text-teal-500">Outros Projetos</a>
             </li>
-            {/* Adicione mais itens de menu conforme necessário */}
+          
           </ul>
         </nav>
    

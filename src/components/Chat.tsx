@@ -11,11 +11,11 @@ import { Input } from "./ui/input";
 import { Button } from "./ui/button";
 import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
 import { useChat } from 'ai/react';
-import Image from "next/image";
+
 import { ThemeProvider, useTheme } from 'next-themes';
 
 export default function Chat() {
-  const [assistantName, setAssistantName] = useState("IntelliFlow");
+  const [assistantName, ] = useState("IntelliFlow");
   const [isLoading, setIsLoading] = useState(false);
 
   const { messages, input, handleInputChange, handleSubmit } = useChat();
@@ -80,7 +80,7 @@ export default function Chat() {
           })}
           {isLoading && (
             <div className="flex justify-center mt-2">
-              {/* Adicionando o loader do Tailwind CSS aqui */}
+         
               <div className="animate-spin rounded-full h-6 w-6 border-t-2 border-b-2 border-orange-600"></div>
             </div>
           )}
@@ -101,7 +101,7 @@ export default function Chat() {
               value={input}
               onChange={handleInputChange}
             />
-            <Button className="bg-orange-400" type="submit">
+            <Button className="bg-orange-600" type="submit">
               Perguntar
             </Button>
           </form>
