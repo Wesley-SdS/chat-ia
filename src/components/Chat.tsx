@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { IoIosSend } from "react-icons/io";
 import {
   Card,
   CardHeader,
@@ -35,7 +36,7 @@ export default function Chat() {
   const { theme } = useTheme();
   return (
     <ThemeProvider enableSystem={true} attribute="class">
-      <Card className="dark:bg-dark  mx-10 w-[900px] h-full flex flex-col p-4 border-dotted border-teal-500">
+      <Card className="dark:bg-dark mx-1 lg:mx-10 w-full lg:w-[900px] h-full flex flex-col   border-dotted border-teal-500">
         <CardHeader>
           <CardTitle className="text-orange-600">{assistantInfo.name}</CardTitle>
           <CardDescription>{assistantInfo.bio}</CardDescription>
@@ -97,12 +98,12 @@ export default function Chat() {
           >
             <Input
               className="dark:bg-gray-900"
-              placeholder="Como eu posso te ajudar hoje?"
+              placeholder="Posso ajudar?"
               value={input}
               onChange={handleInputChange}
             />
             <Button className="bg-orange-600 hover:bg-orange-800 text-white" type="submit">
-              Perguntar
+            <IoIosSend />
             </Button>
           </form>
         </CardFooter>
