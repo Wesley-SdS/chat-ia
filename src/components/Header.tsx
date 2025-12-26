@@ -6,12 +6,11 @@ const Header = () => {
     <div className="flex w-20 ">
       <Image
         src="/images/avatar.png"
-        alt="Imagem do Avatar"
-        role="img"
+        alt="IntelliFlow - Logo do Assistente Inteligente"
         width={80}
         height={80}
-        layout="responsive"
-        objectFit="cover"
+        priority
+        style={{ objectFit: 'cover' }}
       />
     </div>
   );

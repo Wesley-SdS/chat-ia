@@ -1,5 +1,5 @@
 'use client';
-import  Chat  from "@/components/Chat"
+import Chat from "@/components/Chat"
 import Header from "@/components/Header";
 import Navbar from "@/components/Navbar";
 import ThemeToggle from "@/components/ThemeToggle";

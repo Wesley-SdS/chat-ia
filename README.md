@@ -1,36 +1,208 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 🤖 IntelliFlow - Assistente Inteligente
 
-## Getting Started
+IntelliFlow é uma aplicação de chat com IA construída com Next.js 16, TypeScript e OpenAI API. Oferece uma interface moderna e intuitiva para conversar com inteligência artificial de forma natural e eficiente.
 
-First, run the development server:
+![Next.js](https://img.shields.io/badge/Next.js-16.0-black?style=flat-square&logo=next.js)
+![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue?style=flat-square&logo=typescript)
+![OpenAI](https://img.shields.io/badge/OpenAI-GPT--3.5--Turbo-green?style=flat-square)
+
+## ✨ Features
+
+- 💬 **Chat em tempo real** com streaming de respostas
+- 🌙 **Dark Mode** com suporte a tema claro/escuro
+- 📱 **Responsivo** - Funciona perfeitamente em mobile e desktop
+- ⚡ **Performance otimizada** com Edge Runtime
+- 🔒 **Seguro** - Validação de input e tratamento de erros
+- ♿ **Acessível** - Seguindo melhores práticas de acessibilidade
+- 🎨 **UI Moderna** - Interface limpa e intuitiva
+
+## 🚀 Começando
+
+### Pré-requisitos
+
+- Node.js 18+ ou superior
+- npm, yarn, pnpm ou bun
+- Chave de API da OpenAI ([obtenha aqui](https://platform.openai.com/api-keys))
+
+### Instalação
+
+1. **Clone o repositório**
+   ```bash
+   git clone https://github.com/seu-usuario/chat-ia.git
+   cd chat-ia
+   ```
+
+2. **Instale as dependências**
+   ```bash
+   npm install
+   # ou
+   yarn install
+   # ou
+   pnpm install
+   ```
+
+3. **Configure as variáveis de ambiente**
+   
+   Crie um arquivo `.env.local` na raiz do projeto:
+   ```bash
+   cp .env.example .env.local
+   ```
+   
+   Edite o arquivo `.env.local` e adicione sua chave da OpenAI:
+   ```env
+   OPENAI_API_KEY=sk-sua-chave-aqui
+   NODE_ENV=development
+   ```
+
+4. **Execute o servidor de desenvolvimento**
+   ```bash
+   npm run dev
+   # ou
+   yarn dev
+   # ou
+   pnpm dev
+   ```
+
+5. **Abra [http://localhost:3000](http://localhost:3000)** no seu navegador
+
+## 📦 Scripts Disponíveis
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+# Desenvolvimento
+npm run dev          # Inicia servidor de desenvolvimento
+
+# Produção
+npm run build        # Cria build de produção
+npm run start        # Inicia servidor de produção
+
+# Qualidade de Código
+npm run lint         # Executa ESLint
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🏗️ Estrutura do Projeto
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```
+chat-ia/
+├── src/
+│   ├── app/
+│   │   ├── api/
+│   │   │   └── chat/
+│   │   │       └── route.ts      # API route para chat
+│   │   ├── layout.tsx            # Layout principal
+│   │   ├── page.tsx              # Página inicial
+│   │   ├── global.css            # Estilos globais
+│   │   └── sitemap.ts            # Sitemap gerado
+│   ├── components/
+│   │   ├── Chat.tsx              # Componente principal de chat
+│   │   ├── Header.tsx            # Cabeçalho
+│   │   ├── Navbar.tsx            # Barra de navegação
+│   │   ├── ThemeToggle.tsx       # Toggle de tema
+│   │   ├── footer.tsx            # Rodapé
+│   │   └── ui/                   # Componentes UI (shadcn/ui)
+│   └── lib/
+│       └── utils.ts              # Utilitários
+├── public/
+│   └── images/                   # Imagens estáticas
+├── .env.example                  # Exemplo de variáveis de ambiente
+├── next.config.js               # Configuração do Next.js
+├── tailwind.config.ts           # Configuração do Tailwind
+└── package.json                 # Dependências
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## 🔧 Configuração
 
-## Learn More
+### Variáveis de Ambiente
 
-To learn more about Next.js, take a look at the following resources:
+| Variável | Descrição | Obrigatória |
+|----------|-----------|-------------|
+| `OPENAI_API_KEY` | Chave de API da OpenAI | ✅ Sim |
+| `NODE_ENV` | Ambiente de execução (`development` ou `production`) | ❌ Não |
+| `NEXT_PUBLIC_APP_URL` | URL pública da aplicação (para SEO) | ❌ Não |
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Personalização
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+- **Nome do Assistente**: Edite `assistantName` em `src/components/Chat.tsx`
+- **Modelo da IA**: Altere o modelo em `src/app/api/chat/route.ts` (linha 17)
+- **Cores e Tema**: Personalize em `tailwind.config.ts` e `src/app/global.css`
 
-## Deploy on Vercel
+## 🚢 Deploy
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Vercel (Recomendado)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+1. Faça push do código para o GitHub
+2. Importe o projeto na [Vercel](https://vercel.com)
+3. Adicione a variável de ambiente `OPENAI_API_KEY`
+4. Deploy automático! 🎉
+
+### Outras Plataformas
+
+O projeto pode ser deployado em qualquer plataforma que suporte Next.js:
+- **Netlify**: Configure build command como `npm run build` e publish directory como `.next`
+- **Railway**: Deploy automático ao fazer push
+- **Docker**: Use a imagem oficial do Next.js
+
+## 🔒 Segurança
+
+- ✅ Validação de input na API
+- ✅ Limites de tamanho de mensagem (10.000 caracteres)
+- ✅ Limite de mensagens por conversa (50 mensagens)
+- ✅ Headers de segurança configurados
+- ✅ Validação de variáveis de ambiente
+- ✅ Tratamento de erros robusto
+
+## 🧪 Testes
+
+> ⚠️ **Nota**: Testes ainda não foram implementados. Veja a seção de [Contribuindo](#-contribuindo) para ajudar.
+
+## 📝 Licença
+
+Este projeto está sob a licença MIT. Veja o arquivo `LICENSE` para mais detalhes.
+
+## 👤 Autor
+
+**Wesley Santos**
+
+- GitHub: [@Wesley-SdS](https://github.com/Wesley-SdS)
+- LinkedIn: [Wesley Santos](https://www.linkedin.com/in/wesley-sds/)
+
+## 🤝 Contribuindo
+
+Contribuições são sempre bem-vindas! Sinta-se à vontade para:
+
+1. Fazer um Fork do projeto
+2. Criar uma branch para sua feature (`git checkout -b feature/AmazingFeature`)
+3. Commit suas mudanças (`git commit -m 'Add some AmazingFeature'`)
+4. Push para a branch (`git push origin feature/AmazingFeature`)
+5. Abrir um Pull Request
+
+## 📊 Roadmap
+
+- [ ] Implementar testes unitários e E2E
+- [ ] Adicionar rate limiting
+- [ ] Histórico de conversas persistente
+- [ ] Suporte a múltiplos modelos de IA
+- [ ] Exportar conversas
+- [ ] Modo de voz
+- [ ] Integração com mais providers de IA
+
+## 🐛 Problemas Conhecidos
+
+- Rate limiting ainda não implementado (planejado)
+- Testes não implementados (planejado)
+
+## 📚 Recursos
+
+- [Documentação Next.js](https://nextjs.org/docs)
+- [Documentação OpenAI](https://platform.openai.com/docs)
+- [Vercel AI SDK](https://sdk.vercel.ai/docs)
+- [shadcn/ui](https://ui.shadcn.com)
+
+## ⚠️ Avisos
+
+- Este projeto requer uma chave de API da OpenAI, que pode ter custos associados
+- Certifique-se de configurar limites de uso adequados na sua conta OpenAI
+- Não compartilhe sua chave de API publicamente
+
+---
+
+⭐ Se este projeto foi útil para você, considere dar uma estrela!
